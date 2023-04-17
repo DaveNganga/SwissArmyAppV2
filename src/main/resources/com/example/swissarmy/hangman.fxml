@@ -10,7 +10,10 @@
       <Button layoutX="29.0" layoutY="31.0" mnemonicParsing="false" text="BACK" />
       <TextField layoutX="393.0" layoutY="200.0" prefHeight="44.0" prefWidth="183.0" />
       <Label layoutX="41.0" layoutY="95.0" prefHeight="36.0" prefWidth="90.0" text="COUNTER" />
-      <ImageView fitHeight="207.0" fitWidth="305.0" layoutX="31.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="207.0" fitWidth="305.0" layoutX="31.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Alternatives+to+Hangman.jpg" />
+         </image></ImageView>
       <Button layoutX="459.0" layoutY="261.0" mnemonicParsing="false" text="ENTER" />
       <Label layoutX="208.0" layoutY="34.0" prefHeight="36.0" prefWidth="166.0" text="HANGMAN" textAlignment="CENTER">
          <font>
