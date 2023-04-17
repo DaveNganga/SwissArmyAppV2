@@ -19,6 +19,14 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-
+    @FXML
+    protected void switchToTipCalculator(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tipCalculator.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("tipCalculator");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
