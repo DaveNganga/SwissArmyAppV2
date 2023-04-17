@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.swissarmy.VerseOfTheDay">
+   <children>
+      <Text layoutX="251.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verse of the Day" underline="true">
+         <font>
+            <Font size="40.0" />
+         </font></Text>
+      <Text layoutX="209.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John 3:16 (ESV): For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life." textAlignment="CENTER" wrappingWidth="382.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="185.0" fitWidth="341.0" layoutX="226.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resolved-to-read-the-bible-zc7fors3.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="55.0" layoutY="55.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

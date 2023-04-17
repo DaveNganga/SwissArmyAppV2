@@ -18,8 +18,13 @@
       <TextField layoutX="323.0" layoutY="331.0" />
       <SplitMenuButton layoutX="303.0" layoutY="368.0" mnemonicParsing="false" text="Pick an activity">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#switchToHangman" text="Hangman" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+
+            <MenuItem mnemonicParsing="false" text="Tip Calculator" />
+            <MenuItem mnemonicParsing="false" text="Hangman" />
+          <MenuItem mnemonicParsing="false" text="The Eagles" />
+          <MenuItem mnemonicParsing="false" text="Verse of the Day" />
+            <MenuItem mnemonicParsing="false" text="Activity #5" />
+
         </items>
       </SplitMenuButton>
       <Button layoutX="431.0" layoutY="368.0" mnemonicParsing="false" text="Launch" />
@@ -28,6 +33,7 @@
             <Image url="@Settings%20Icon.png" />
          </image>
       </ImageView>
+      <Button layoutX="691.0" layoutY="50.0" mnemonicParsing="false" text="Button" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
