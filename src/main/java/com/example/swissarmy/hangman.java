@@ -16,7 +16,7 @@ public class hangman {
     int count = 0;
 
     @FXML
-    String setWord = "cactus";
+    String toGuessWord = "cactus";
     String guessWord = textField.getText();
 
     
