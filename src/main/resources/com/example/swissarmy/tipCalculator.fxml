@@ -24,5 +24,6 @@
         </children>
     </HBox>
     <Label fx:id="result" text="\$0.00" />
-    <Button onAction="#calculateTip" text="Hello!" />
+    <Button onAction="#calculateTip" text="Calculate" />
+   <Button mnemonicParsing="false" onAction="#goBack" text="Back" />
 </VBox>

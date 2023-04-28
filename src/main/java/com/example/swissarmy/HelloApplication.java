@@ -11,15 +11,22 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    private Stage stage;
     @Override
     public void start(Stage stage) throws IOException {
+        this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        HelloController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setApplication(this);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
     }
-
+    public Stage getStage() {
+        return stage;
+    }
 //    @FXML
 //    public void switchToHangman(ActionEvent event) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hangman.fxml"));
@@ -32,4 +39,5 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }

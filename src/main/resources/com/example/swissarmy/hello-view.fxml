@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" fx:controller="com.example.swissarmy.HelloController"  xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.swissarmy.HelloController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="303.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -16,18 +16,17 @@
       <Label layoutX="306.0" layoutY="279.0" text="A product of highlander industries" />
       <Label layoutX="337.0" layoutY="306.0" text="Insert Nickname Below" />
       <TextField layoutX="323.0" layoutY="331.0" />
-      <SplitMenuButton layoutX="303.0" layoutY="368.0" mnemonicParsing="false" text="Pick an activity">
+      <SplitMenuButton fx:id="sceneSelector" layoutX="303.0" layoutY="368.0" mnemonicParsing="false" text="Pick an activity">
         <items>
 
-            <MenuItem mnemonicParsing="false" text="Tip Calculator" />
-            <MenuItem mnemonicParsing="false" text="Hangman" />
-          <MenuItem mnemonicParsing="false" text="The Eagles" />
-          <MenuItem mnemonicParsing="false" text="Verse of the Day" />
-            <MenuItem mnemonicParsing="false" text="Activity #5" />
+<!--            <MenuItem mnemonicParsing="false" text="Tip Calculator" />-->
+<!--            <MenuItem mnemonicParsing="false" text="Hangman" />-->
+<!--            <MenuItem mnemonicParsing="false" text="The Eagles" />-->
+<!--            <MenuItem mnemonicParsing="false" text="Verse of the Day" />-->
 
         </items>
       </SplitMenuButton>
-      <Button layoutX="431.0" layoutY="368.0" mnemonicParsing="false" text="Launch" />
+      <Button fx:id="switchButton" layoutX="431.0" layoutY="368.0" mnemonicParsing="false" text="Launch" />
       <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="755.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Settings%20Icon.png" />

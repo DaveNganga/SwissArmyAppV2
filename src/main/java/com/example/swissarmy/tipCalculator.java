@@ -1,8 +1,16 @@
 package com.example.swissarmy;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class tipCalculator {
     @FXML
@@ -26,5 +34,9 @@ public class tipCalculator {
     @FXML
     protected void calculateTip(){
         result.setText(String.valueOf(Double.valueOf(money.getText())/100*Double.valueOf(tip.getText().replace("%",""))));
+    }
+    @FXML
+    private void goBack(ActionEvent event) throws IOException {
+        //application.start(application.getStage());
     }
 }
