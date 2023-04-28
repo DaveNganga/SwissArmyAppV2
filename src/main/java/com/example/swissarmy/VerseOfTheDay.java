@@ -38,6 +38,6 @@ public class VerseOfTheDay {
                 "This is the day the Lord has made; let us rejoice and be glad in it. - Psalm 118:24",
                 "For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord. - Romans 6:23",
                 "For you know that it was not with perishable things such as silver or gold that you were redeemed from the empty way of life handed down to you from your ancestors, but with the precious blood of Christ, a lamb without blemish or defect. - 1 Peter 1:18-19"
-        }
+        };
     }
 }
