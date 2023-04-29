@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         HelloController controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setApplication(this);
-        stage.setTitle("Hello!");
+        stage.setTitle("Swiss Army");
         stage.setScene(scene);
         stage.show();
     }

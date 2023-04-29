@@ -37,6 +37,11 @@ public class tipCalculator {
     }
     @FXML
     private void goBack(ActionEvent event) throws IOException {
-        //application.start(application.getStage());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene main = new Scene(fxmlLoader.load(), 800, 600);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Swiss Army");
+        stage.setScene(main);
+        stage.show();
     }
 }
