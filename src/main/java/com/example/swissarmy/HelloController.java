@@ -86,7 +86,10 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Node root = loader.load();
             Scene scene = new Scene((Parent) root);
-
+            if (stage == null) {
+                // Create a new stage object
+                stage = new Stage();
+            }
             // Set the new scene on the stage
             stage.setScene(scene);
             stage.show();
