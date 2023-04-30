@@ -1,8 +1,15 @@
 package com.example.swissarmy;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,12 +21,15 @@ public class hangman {
 
 
     @FXML
-    Label counts;
+    private Label counts;
+    @FXML
+    private Label output;
 
     int count = 0;
 
     @FXML
     String toGuessWord = "cactus";
+
     String guessWord = textField.getText();
   // checks to see if the word is already a match and the game is won if it is
     boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
@@ -44,13 +54,6 @@ public class hangman {
         char[] array2 = guessWord.toCharArray();
 
         Set<Character> hiddenWord = new HashSet<Character>(Arrays.asList(array1));
-
-
-    }
-
-    }
-
-
 
 
 
