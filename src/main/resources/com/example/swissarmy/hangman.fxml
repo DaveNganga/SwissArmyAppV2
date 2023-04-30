@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.swissarmy.hangman">
    <children>
-      <Button layoutX="110.0" layoutY="55.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Button layoutX="110.0" layoutY="55.0" mnemonicParsing="false" onAction="#Back" text="Back" />
       <TextField layoutX="476.0" layoutY="328.0" prefHeight="44.0" prefWidth="183.0" />
       <Label fx:id="counts" layoutX="205.0" layoutY="210.0" prefHeight="36.0" prefWidth="90.0" text="COUNTER" />
       <ImageView fitHeight="207.0" fitWidth="305.0" layoutX="89.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
