@@ -54,12 +54,11 @@
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding></HBox>
-      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="706.0" layoutY="52.0" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="icon" fitHeight="25.0" fitWidth="22.0" layoutX="706.0" layoutY="52.0" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Settings%20Icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="691.0" layoutY="69.0" mnemonicParsing="false" text="Button" />
       <Label fx:id="clock" layoutX="110.0" layoutY="54.0" text="00:00" />
    </children>
    <padding>

@@ -46,8 +46,6 @@ public class HelloController {
     private Parent root;
     @FXML
     private ImageView icon;
-    @FXML
-    private Button setting;
 
     @FXML
     private void initialize() {
@@ -102,9 +100,24 @@ public class HelloController {
 
     public void mousePressed() {
         System.out.println("pressed");
-}
+    }
 
     public void mouseReleased(MouseEvent mouseEvent) {
         System.out.println("released");
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("verseOfTheDay.fxml"));
+            Node root = loader.load();
+            Scene scene = new Scene((Parent) root);
+
+            // Get the current stage
+            Stage stage = (Stage) icon.getScene().getWindow();
+
+            // Set the new scene on the stage
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    }
+}
