@@ -90,7 +90,7 @@ public class HelloController {
     @FXML
     private void switchScene4(ActionEvent event) throws IOException {
         // Load the new FXML file
-        Parent root =  FXMLLoader.load(getClass().getResource("verseOfTheDay.fxml"));
+        Parent root =  FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -106,7 +106,7 @@ public class HelloController {
         System.out.println("released");
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("verseOfTheDay.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("setting.fxml"));
             Node root = loader.load();
             Scene scene = new Scene((Parent) root);
 

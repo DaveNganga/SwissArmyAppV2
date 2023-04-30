@@ -27,17 +27,6 @@ public class Stats {
                     tempWins+=1;
                 }
         }
-
-//        @FXML
-//        private void goBack(ActionEvent event) throws IOException {
-//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-//            Scene main = new Scene(fxmlLoader.load(), 800, 600);
-//            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//            stage.setTitle("Swiss Army");
-//            stage.setScene(main);
-//            stage.show();
-//        }
-
     }
     public static int getWins() {
         return wins;
@@ -45,5 +34,14 @@ public class Stats {
 
     public static void setWins(int wins) {
         Stats.wins = wins;
+    }
+    @FXML
+    private void goBack(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene main = new Scene(fxmlLoader.load(), 800, 600);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Swiss Army");
+        stage.setScene(main);
+        stage.show();
     }
 }

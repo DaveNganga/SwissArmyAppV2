@@ -7,19 +7,19 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.swissarmy.hangman">
    <children>
-      <Button layoutX="29.0" layoutY="31.0" mnemonicParsing="false" onAction="#goBack" text="BACK" />
-      <TextField layoutX="393.0" layoutY="200.0" prefHeight="44.0" prefWidth="183.0" />
-      <Label fx:id="counts" layoutX="41.0" layoutY="95.0" prefHeight="36.0" prefWidth="90.0" text="COUNTER" />
-      <ImageView fitHeight="207.0" fitWidth="305.0" layoutX="31.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="110.0" layoutY="55.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <TextField layoutX="476.0" layoutY="328.0" prefHeight="44.0" prefWidth="183.0" />
+      <Label fx:id="counts" layoutX="205.0" layoutY="210.0" prefHeight="36.0" prefWidth="90.0" text="COUNTER" />
+      <ImageView fitHeight="207.0" fitWidth="305.0" layoutX="89.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Alternatives+to+Hangman.jpg" />
          </image></ImageView>
-      <Button layoutX="459.0" layoutY="261.0" mnemonicParsing="false" onAction="#checkGuess" text="ENTER" />
-      <Label layoutX="208.0" layoutY="34.0" prefHeight="36.0" prefWidth="166.0" text="HANGMAN" textAlignment="CENTER">
+      <Button layoutX="542.0" layoutY="415.0" mnemonicParsing="false" onAction="#checkGuess" text="ENTER" />
+      <Label layoutX="317.0" layoutY="131.0" prefHeight="36.0" prefWidth="166.0" text="HANGMAN" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="output" layoutX="400.0" layoutY="108.0" prefHeight="17.0" prefWidth="166.0" text="enter in text field below" />
+      <Label fx:id="output" layoutX="466.0" layoutY="255.0" prefHeight="45.0" prefWidth="204.0" text="enter in text field below" />
    </children>
 </AnchorPane>
