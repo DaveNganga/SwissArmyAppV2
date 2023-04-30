@@ -45,12 +45,17 @@ public class hangman {
             System.out.println("Please try again");
             count+=1;
             System.out.println("display1");
-            char[] array1 = toGuessWord.toCharArray();
-             System.out.println(array1);
-             char[] array2 = guessWord.toCharArray();
-             Set<Character> hiddenWord = new HashSet<Character>(Arrays.asList(array1));
-             Set<Character> checkingWord = new HashSet<Character>(Arrays.asList(array2));
-
+            char[] compWord = toGuessWord.toCharArray();
+             //System.out.println(compWord);
+             char[] userWord = guessWord.toCharArray();
+             Set<Character> hiddenWord = new HashSet<>();
+             for(int i=0; i<compWord.length;i++) {
+                 hiddenWord.add(compWord[i]);
+             }
+             Set<Character> checkingWord = new HashSet<Character>();
+            for(int i=0; i<userWord.length;i++) {
+                checkingWord.add(userWord[i]);
+            }
              hiddenWord.retainAll(checkingWord);
             System.out.println("Intersection: + hiddenWord");
 
@@ -58,7 +63,7 @@ public class hangman {
 
         }
         if (count == 7) {
-            break;
+            System.out.println("You lose this round please try again");
 
     }
 }
@@ -73,8 +78,7 @@ public class hangman {
         stage.show();
     }
 
-        // https://stackoverflow.com/questions/32262059/java-find-element-in-array-using-condition-and-lambda
-        // https://www.digitalocean.com/community/tutorials/java-array-contains-value
+
     }
 
 
