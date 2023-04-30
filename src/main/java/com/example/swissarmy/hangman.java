@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 public class hangman {
 
     @FXML
@@ -23,18 +26,27 @@ public class hangman {
     // if the word is not a match a few more steps are undertaken before trying again
     // convert the strings to arrays and compare them and print out what is similar
     // in the toGuess word
-    if (check1 = true) {
+    if (check1 == true) {
         System.out.println("Congratulations you win");
-    } else {
-        count+=1;
+    } else
+
+    {
+        // count+=1;
         System.out.println("Please try again");
         // https://stackoverflow.com/questions/32262059/java-find-element-in-array-using-condition-and-lambda
         // https://www.digitalocean.com/community/tutorials/java-array-contains-value
+    }
+       if (check1 == true)
+
+    {
         char[] array1 = toGuessWord.toCharArray();
+        System.out.println(array1);
         char[] array2 = guessWord.toCharArray();
 
-        
+        Set<Character> hiddenWord = new HashSet<Character>(Arrays.asList(array1));
 
+
+    }
 
     }
 
@@ -43,4 +55,6 @@ public class hangman {
 
 
 
-}
+
+
+
