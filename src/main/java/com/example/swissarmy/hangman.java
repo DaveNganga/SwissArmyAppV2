@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 public class hangman {
 
     @FXML
@@ -27,37 +30,34 @@ public class hangman {
     @FXML
     String toGuessWord = "cactus";
 
+    String guessWord = textField.getText();
+  // checks to see if the word is already a match and the game is won if it is
+    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
+    // if the word is not a match a few more steps are undertaken before trying again
+    // convert the strings to arrays and compare them and print out what is similar
+    // in the toGuess word
+    if (check1 == true) {
+        System.out.println("Congratulations you win");
+    } else
 
-    @FXML
-    private void checkGuess(ActionEvent event) {
-        String guessWord = textField.getText();
-
-        // checks to see if the word is already a match and the game is won if it is
-        boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
-        // if the word is not a match a few more steps are undertaken before trying again
-        // convert the strings to arrays and compare them and print out what is similar
-        // in the toGuess word
-        if (check1) {
-            output.setText("Congratulations you win");
-        } else {
-            count++;
-            output.setText("Please try again");
-            // https://stackoverflow.com/questions/32262059/java-find-element-in-array-using-condition-and-lambda
-            // https://www.digitalocean.com/community/tutorials/java-array-contains-value
-            char[] array1 = toGuessWord.toCharArray();
-            char[] array2 = guessWord.toCharArray();
-        }
-        counts.setText("Counts: " + count);
+    {
+        // count+=1;
+        System.out.println("Please try again");
+        // https://stackoverflow.com/questions/32262059/java-find-element-in-array-using-condition-and-lambda
+        // https://www.digitalocean.com/community/tutorials/java-array-contains-value
     }
+       if (check1 == true)
+
+    {
+        char[] array1 = toGuessWord.toCharArray();
+        System.out.println(array1);
+        char[] array2 = guessWord.toCharArray();
+
+        Set<Character> hiddenWord = new HashSet<Character>(Arrays.asList(array1));
 
 
-    @FXML
-    private void goBack(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene main = new Scene(fxmlLoader.load(), 800, 600);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Swiss Army");
-        stage.setScene(main);
-        stage.show();
-    }
-}
+
+
+
+
+
