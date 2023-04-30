@@ -17,9 +17,6 @@ public class HelloApplication extends Application {
         this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        HelloController controller = fxmlLoader.getController();
-        controller.setStage(stage);
-        controller.setApplication(this);
         stage.setTitle("Swiss Army");
         stage.setScene(scene);
         stage.show();
@@ -27,15 +24,6 @@ public class HelloApplication extends Application {
     public Stage getStage() {
         return stage;
     }
-//    @FXML
-//    public void switchToHangman(ActionEvent event) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hangman.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
-//        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        stage.setTitle("HANGMAN");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
     public static void main(String[] args) {
         launch();
     }
