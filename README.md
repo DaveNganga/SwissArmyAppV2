@@ -46,7 +46,7 @@ supported screen size: anything above 800px * 600px.  <br />
 
 # UML Diagram
 
-![image](https://user-images.githubusercontent.com/44644848/230129107-354ff7e2-3266-47f1-a842-92f728ad48b3.png)
+![image](com/example/swissarmy/Screenshot 2023-05-01 081351.png)
 
 
 

@@ -36,9 +36,10 @@ public class hangman {
     String guessWord = textField.getText();
     // checks to see if the word is already a match and the game is won if it is
     String toGuessWord = "audio";
-    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
+
 
 // loads the images depending on if the user guesses wrong
+    // https://gist.github.com/SedaKunda/79e1d9ddc798aec3a366919f0c14a078
     public void hangmanStage () {
         ImageView stageNumber = new ImageView();
 
@@ -74,64 +75,23 @@ public class hangman {
         }
     }
 
-//    public void compareContent() {
-//        String guessWord = textField.getText();
-//        // checks to see if the word is already a match and the game is won if it is
-//        String toGuessWord = "audio";
-//        boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
-//        // if the word is not a match a few more steps are undertaken before trying again
-//        // convert the strings to arrays and compare them and print out what is similar
-//        // in the toGuess word
-//        boolean progress = true;
-//        while (progress) {
-//            if (check1) {
-//                userN.setText("Congratulations you win");
-//            } else {
-//                count += 1;
-//                char[] compWord = toGuessWord.toCharArray();
-//                //System.out.println(compWord);
-//                char[] userWord = guessWord.toCharArray();
-//                Set<Character> hiddenWord = new HashSet<>();
-//                for (int i = 0; i < compWord.length; i++) {
-//                    hiddenWord.add(compWord[i]);
-//
-//                }
-//                Set<Character> checkingWord = new HashSet<Character>();
-//                for (int i = 0; i < userWord.length; i++) {
-//                    checkingWord.add(userWord[i]);
-//
-//                }
-//                Set<Character> similarChar = new HashSet<Character>(hiddenWord);
-//                similarChar.retainAll(checkingWord);
-//                String similarCharacSets = Arrays.toString(similarChar.toArray());
-//                userN.setText(similarCharacSets);
-//
-//                if (count == 7) {
-//                    userN.setText("You lose this round please try again");
-//                    {
-//                        break;
-//                    }
-//
-//                }
-//            }
-//            }
-//
-//
-//        }
-/////////////////////////////////
-public void compareContent() {
-//    String guessWord = textField.getText();
-//    // checks to see if the word is already a match and the game is won if it is
-//    String toGuessWord = "audio";
-//    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
-    // if the word is not a match a few more steps are undertaken before trying again
+
+private void updateHangmanImage() {
+    ImageView stageNumber = new ImageView();
+    String imagePath = "com/example/swissarmy/New folder/h" + count + ".png";
+    Image image = new Image(imagePath);
+    stageNumber.setImage(image);
+}
+public void compareWords() {
+
+   // if the word is not a match a few more steps are undertaken before trying again
     // convert the strings to arrays and compare them and print out what is similar
     // in the toGuess word
-
+    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
         if (check1) {
             userN.setText("Congratulations you win");
         } else {
-            count += 1;
+            count ++;
 
             char[] compWord = toGuessWord.toCharArray();
             char[] userWord = guessWord.toCharArray();
@@ -147,25 +107,12 @@ public void compareContent() {
                 }
 
             }
-            hangmanStage();
-
+            updateHangmanImage();
+           // userN.setText("You lose this round please try again");
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    /////////////////////////////////
-        @FXML
+         @FXML
         private void Back (ActionEvent event) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene main = new Scene(fxmlLoader.load(), 800, 600);
