@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +16,19 @@ import java.util.Random;
 
 
 public class VerseOfTheDay {
+
+    private String[] imagePaths = {
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+            "/verseIMG1.jpg",
+    };
 
     private String[] verses = {
         "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. - John 3:16 NIV",
@@ -49,12 +64,18 @@ public class VerseOfTheDay {
     };
 
     @FXML
+    private ImageView verseImage;
+
+    @FXML
     private Label verseLabel;
 
     @FXML
-    public void versesText() {
+    public void versesFunction() {
         Random random = new Random();
+        int imageIndex = random.nextInt(imagePaths.length);
         int verseIndex = random.nextInt(verses.length);
+
+        verseImage.setImage(new Image(imagePaths[imageIndex]));
         verseLabel.setText(verses[verseIndex]);
     }
 
