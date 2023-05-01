@@ -11,7 +11,10 @@
          <font>
             <Font size="40.0" />
          </font></Text>
-      <Label fx:id="verseLabel" layoutX="372.0" layoutY="283.0" text="Label" />
+      <Label fx:id="verseLabel" layoutX="163.0" layoutY="189.0" prefHeight="151.0" prefWidth="474.0" text="Trust in the Lord with all your heart and lean not on your own understanding. - Proverbs 3:5 NIV" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
       <ImageView fitHeight="185.0" fitWidth="341.0" layoutX="226.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resolved-to-read-the-bible-zc7fors3.jpg" />
