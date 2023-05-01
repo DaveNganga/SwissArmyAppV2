@@ -50,3 +50,8 @@ supported screen size: anything above 800px * 600px.  <br />
 
 
 ## Bugs
+1. Activity 2 - Uknown bugs - No errors but display isn't running
+2. Activity 3 - Does not work because CSV file grabbing causes infinite loop. (Known Bug)
+3. Activity 4 - Text doesn't change daily yet.
+4. Settings Trouble creating persisitency of variables for time. 
+
