@@ -48,6 +48,13 @@ public class HelloController {
     private Parent root;
     @FXML
     private ImageView icon;
+    public static String datetimePattern = "hh:mm a";
+
+    public static void setDatetimePattern(String datetime) {
+        datetimePattern = datetime;
+    }
+
+
 
     public boolean validateField(){
         if(NickName.getText().isEmpty()) {
@@ -73,7 +80,7 @@ public class HelloController {
 
     private void updateClock() {
         LocalTime currentTime = LocalTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datetimePattern);
         String formattedTime = currentTime.format(formatter);
         clock.setText(formattedTime);
     }

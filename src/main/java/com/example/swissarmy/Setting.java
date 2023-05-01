@@ -30,5 +30,9 @@ public class Setting {
     private void setColorDark() throws IOException{
         Application.setUserAgentStylesheet(HelloApplication.class.getResource("stylesDark.css").toExternalForm());
     }
+    @FXML
+    private void set24hours() {
+        HelloController.setDatetimePattern("hh:mm ");
+    }
 
 }
