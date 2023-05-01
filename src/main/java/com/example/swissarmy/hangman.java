@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,58 +29,142 @@ public class hangman {
     @FXML
     private Label output;
 
-    int count = 0;
 
+    @FXML
+    private int count = 0;
 
-    public void compareContent() {
-        String guessWord = textField.getText();
-        // checks to see if the word is already a match and the game is won if it is
-        String toGuessWord = "audio";
-        boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
-        // if the word is not a match a few more steps are undertaken before trying again
-        // convert the strings to arrays and compare them and print out what is similar
-        // in the toGuess word
-        boolean progress = true;
-        while (progress) {
-            if (check1) {
-                userN.setText("Congratulations you win");
-            } else {
-                count += 1;
-                char[] compWord = toGuessWord.toCharArray();
-                //System.out.println(compWord);
-                char[] userWord = guessWord.toCharArray();
-                Set<Character> hiddenWord = new HashSet<>();
-                for (int i = 0; i < compWord.length; i++) {
-                    hiddenWord.add(compWord[i]);
+    String guessWord = textField.getText();
+    // checks to see if the word is already a match and the game is won if it is
+    String toGuessWord = "audio";
+    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
 
-                }
-                Set<Character> checkingWord = new HashSet<Character>();
-                for (int i = 0; i < userWord.length; i++) {
-                    checkingWord.add(userWord[i]);
+// loads the images depending on if the user guesses wrong
+    public void hangmanStage () {
+        ImageView stageNumber = new ImageView();
 
-                }
-                Set<Character> similarChar = new HashSet<Character>(hiddenWord);
-                similarChar.retainAll(checkingWord);
-                String similarCharacSets = Arrays.toString(similarChar.toArray());
-                userN.setText(similarCharacSets);
+        if (count == 1) {
+            Image count1 = new Image("com/example/swissarmy/New folder/h1.png");
+            stageNumber.setImage(count1);
+        } else if (count == 2) {
+            Image count2 = new Image("com/example/swissarmy/New folder/h2.png");
+            stageNumber.setImage(count2);
 
-                if (count == 7) {
-                    userN.setText("You lose this round please try again");
-                    {
-                        break;
+        }else if (count == 3) {
+            Image count3 = new Image("com/example/swissarmy/New folder/h3.png");
+            stageNumber.setImage(count3);
+
+        }else if (count == 4) {
+            Image count4 = new Image("com/example/swissarmy/New folder/h4.png");
+            stageNumber.setImage(count4);
+
+        }else if (count == 5) {
+            Image count5 = new Image("com/example/swissarmy/New folder/h5.png");
+            stageNumber.setImage(count5);
+
+        }else if (count == 6) {
+            Image count6 = new Image("com/example/swissarmy/New folder/h6.png");
+            stageNumber.setImage(count6);
+
+        }else if (count == 7) {
+            Image count7 = new Image("com/example/swissarmy/New folder/h7.png");
+            stageNumber.setImage(count7);
+
+        }else{
+            stageNumber.setImage(null);
+        }
+    }
+
+//    public void compareContent() {
+//        String guessWord = textField.getText();
+//        // checks to see if the word is already a match and the game is won if it is
+//        String toGuessWord = "audio";
+//        boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
+//        // if the word is not a match a few more steps are undertaken before trying again
+//        // convert the strings to arrays and compare them and print out what is similar
+//        // in the toGuess word
+//        boolean progress = true;
+//        while (progress) {
+//            if (check1) {
+//                userN.setText("Congratulations you win");
+//            } else {
+//                count += 1;
+//                char[] compWord = toGuessWord.toCharArray();
+//                //System.out.println(compWord);
+//                char[] userWord = guessWord.toCharArray();
+//                Set<Character> hiddenWord = new HashSet<>();
+//                for (int i = 0; i < compWord.length; i++) {
+//                    hiddenWord.add(compWord[i]);
+//
+//                }
+//                Set<Character> checkingWord = new HashSet<Character>();
+//                for (int i = 0; i < userWord.length; i++) {
+//                    checkingWord.add(userWord[i]);
+//
+//                }
+//                Set<Character> similarChar = new HashSet<Character>(hiddenWord);
+//                similarChar.retainAll(checkingWord);
+//                String similarCharacSets = Arrays.toString(similarChar.toArray());
+//                userN.setText(similarCharacSets);
+//
+//                if (count == 7) {
+//                    userN.setText("You lose this round please try again");
+//                    {
+//                        break;
+//                    }
+//
+//                }
+//            }
+//            }
+//
+//
+//        }
+/////////////////////////////////
+public void compareContent() {
+//    String guessWord = textField.getText();
+//    // checks to see if the word is already a match and the game is won if it is
+//    String toGuessWord = "audio";
+//    boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
+    // if the word is not a match a few more steps are undertaken before trying again
+    // convert the strings to arrays and compare them and print out what is similar
+    // in the toGuess word
+
+        if (check1) {
+            userN.setText("Congratulations you win");
+        } else {
+            count += 1;
+
+            char[] compWord = toGuessWord.toCharArray();
+            char[] userWord = guessWord.toCharArray();
+
+            for (int i = 0; i < compWord.length; i++) {
+                for (int j = 0; j < userWord.length; j++) {
+                    if(compWord[i] == userWord[j]){
+                        userN.setText("Please try again");
+                        String s = userN.getText() + compWord[i];
+                        userN.setText(s);
                     }
 
                 }
-            }
-//            else {
-//                userN.setText("Please try again");
-//            }
 
             }
-
+            hangmanStage();
 
         }
+    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+    /////////////////////////////////
         @FXML
         private void Back (ActionEvent event) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
