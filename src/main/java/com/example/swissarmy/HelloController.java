@@ -9,15 +9,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Duration;
@@ -43,10 +41,29 @@ public class HelloController {
     AnchorPane map;
     private Stage stage;
     private Scene scene;
+
+    @FXML
+    private TextField NickName;
+    private String Nname;
     private Parent root;
     @FXML
     private ImageView icon;
 
+    public boolean validateField(){
+        if(NickName.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Validate Fields");
+            alert.setContentText("Please Put A Nickname");
+            alert.showAndWait();
+
+            return false;
+        } else {
+            this.Nname = NickName.getText();
+            return true;
+        }
+
+    }
     @FXML
     private void initialize() {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateClock()));
@@ -62,62 +79,69 @@ public class HelloController {
     }
     @FXML
     private void switchScene1(ActionEvent event) throws IOException {
-        // 
         // Load the new FXML file
-        Parent root =  FXMLLoader.load(getClass().getResource("tipCalculator.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (validateField()) {
+            Parent root = FXMLLoader.load(getClass().getResource("tipCalculator.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     @FXML
     private void switchScene2(ActionEvent event) throws IOException {
         // Load the new FXML file
-        Parent root =  FXMLLoader.load(getClass().getResource("hangman.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (validateField()) {
+            Parent root = FXMLLoader.load(getClass().getResource("hangman.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     @FXML
     private void switchScene3(ActionEvent event) throws IOException {
         // Load the new FXML file
-        Parent root =  FXMLLoader.load(getClass().getResource("verseOfTheDay.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (validateField()) {
+            Parent root = FXMLLoader.load(getClass().getResource("verseOfTheDay.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     @FXML
     private void switchScene4(ActionEvent event) throws IOException {
         // Load the new FXML file
-        Parent root =  FXMLLoader.load(getClass().getResource("stats.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (validateField()) {
+            Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     
 
-    public void mousePressed() {
-        System.out.println("pressed");
-    }
+    public void mousePressed() {System.out.println("pressed");}
 
     public void mouseReleased(MouseEvent mouseEvent) {
         System.out.println("released");
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("setting.fxml"));
-            Node root = loader.load();
-            Scene scene = new Scene((Parent) root);
+            if (validateField()) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("setting.fxml"));
+                Node root = loader.load();
+                Scene scene = new Scene((Parent) root);
 
 
-            // Get the current stage
-            Stage stage = (Stage) icon.getScene().getWindow();
+                // Get the current stage
+                Stage stage = (Stage) icon.getScene().getWindow();
 
-            // Set the new scene on the stage
-            stage.setScene(scene);
-            stage.show();
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
