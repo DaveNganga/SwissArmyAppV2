@@ -1,0 +1,37 @@
+/* styles.css */
+
+/* Set the background color of the scene */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Set the font size and color of the scene title */
+.title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #333333;
+}
+
+/* Set the background color and padding of a button */
+.button {
+    -fx-background-color: #0066cc;
+    -fx-padding: 8px 16px;
+}
+
+/* Set the font color of a button */
+.button .text {
+    -fx-fill: #ffffff;
+}
+
+/* Set the background color and border of a text field */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+/* Set the font size and color of a label */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #666666;
+}

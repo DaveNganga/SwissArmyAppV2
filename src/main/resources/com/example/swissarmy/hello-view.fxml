@@ -19,7 +19,7 @@
          </font></Label>
       <Label layoutX="306.0" layoutY="292.0" text="A product of highlander industries" />
       <Label layoutX="337.0" layoutY="321.0" text="Insert Nickname Below" />
-      <TextField layoutX="323.0" layoutY="355.0" prefHeight="37.0" prefWidth="149.0" />
+      <TextField fx:id="NickName" layoutX="323.0" layoutY="355.0" prefHeight="37.0" prefWidth="149.0" />
       <HBox alignment="CENTER" layoutX="150.0" layoutY="408.0" prefHeight="67.0" prefWidth="500.0">
          <children>
             <Button fx:id="switchButton1" mnemonicParsing="false" onAction="#switchScene1" text="Tip Calculator">
