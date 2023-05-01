@@ -24,8 +24,9 @@ public class HelloApplication extends Application {
     public Stage getStage() {
         return stage;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         launch();
+        //Stats.generateStats();
     }
 
 }
