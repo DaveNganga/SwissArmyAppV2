@@ -21,10 +21,9 @@ public class hangman {
 
     @FXML
     TextField textField = new TextField();
-
-
     @FXML
-    private Label counts;
+    TextField userN = new TextField();
+
     @FXML
     private Label output;
     private int count = 0;
@@ -32,40 +31,44 @@ public class hangman {
     public void compareContent(){
         String guessWord = textField.getText();
         // checks to see if the word is already a match and the game is won if it is
-        String toGuessWord = "cactus";
+        String toGuessWord = "audio";
         boolean check1 = toGuessWord.equalsIgnoreCase(guessWord);
         // if the word is not a match a few more steps are undertaken before trying again
         // convert the strings to arrays and compare them and print out what is similar
         // in the toGuess word
         if (check1) {
-            System.out.println("Congratulations you win");
+            userN.setText("Congratulations you win");
         }
         else
         {
-            System.out.println("Please try again");
             count+=1;
-            System.out.println("display1");
             char[] compWord = toGuessWord.toCharArray();
              //System.out.println(compWord);
              char[] userWord = guessWord.toCharArray();
              Set<Character> hiddenWord = new HashSet<>();
              for(int i=0; i<compWord.length;i++) {
                  hiddenWord.add(compWord[i]);
+
              }
              Set<Character> checkingWord = new HashSet<Character>();
             for(int i=0; i<userWord.length;i++) {
                 checkingWord.add(userWord[i]);
+
             }
-             hiddenWord.retainAll(checkingWord);
-            System.out.println("Intersection: + hiddenWord");
+            Set<Character> similarChar = new HashSet<Character>(hiddenWord);
+            similarChar.retainAll(checkingWord);
+            String similarCharacSets = Arrays.toString(similarChar.toArray());
+             userN.setText(similarCharacSets);
 
+            if (count == 7) {
+                userN.setText("You lose this round please try again");
 
+            } else {
+                userN.setText("Please try again");
+            }
 
         }
-        if (count == 7) {
-            System.out.println("You lose this round please try again");
 
-    }
 }
 
     @FXML

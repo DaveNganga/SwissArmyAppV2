@@ -21,5 +21,6 @@
          </font>
       </Label>
       <Label fx:id="output" layoutX="466.0" layoutY="255.0" prefHeight="45.0" prefWidth="204.0" text="Enter in text field below" />
+      <TextField fx:id="userN" layoutX="530.0" layoutY="68.0" prefHeight="70.0" prefWidth="235.0" />
    </children>
 </AnchorPane>
