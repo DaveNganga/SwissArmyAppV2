@@ -11,19 +11,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    private Stage stage;
+    private Stage primaryScene;
+
+
     @Override
     public void start(Stage stage) throws IOException {
-        this.stage = stage;
+        this.primaryScene = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Swiss Army");
         stage.setScene(scene);
         stage.show();
     }
-    public Stage getStage() {
-        return stage;
-    }
+
+
     public static void main(String[] args) throws Exception {
         launch();
         //Stats.generateStats();

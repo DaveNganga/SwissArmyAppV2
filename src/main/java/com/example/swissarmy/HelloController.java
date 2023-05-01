@@ -62,6 +62,7 @@ public class HelloController {
     }
     @FXML
     private void switchScene1(ActionEvent event) throws IOException {
+        // 
         // Load the new FXML file
         Parent root =  FXMLLoader.load(getClass().getResource("tipCalculator.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -109,6 +110,7 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("setting.fxml"));
             Node root = loader.load();
             Scene scene = new Scene((Parent) root);
+
 
             // Get the current stage
             Stage stage = (Stage) icon.getScene().getWindow();
